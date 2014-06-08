@@ -36,6 +36,18 @@ function register(){
 
 }
 
+function pass() {
+
+	var  first = document.getElementById('password').value;
+	var second = document.getElementById('cpassword').value;
+	
+	if (second==first) {
+		document.getElementById('mcpassword').innerHTML = ("OK!");
+	} else {
+		document.getElementById('mcpassword').innerHTML = ("<span style='color: red'>Your passwords don't match</span>");
+	}
+}
+
 </script>
 </head>
 
@@ -43,14 +55,14 @@ function register(){
 
 <form>
  <table border="1">
-   <tr><td>Name:</td><td><input type="text" name="name" id="name" /></td><td><div id="mname"></div></td></tr>
-   <tr><td>Last Name:</td><td><input type="text" name="lname" id="lname" /></td><td><div id="mlname"></div></td></tr>
-   <tr><td>Email:</td><td><input type="text" name="email" id="email" /></td><td><div id="memail"></div></td></tr>
-   <tr><td>Password:</td><td><input type="password" name="password" id="password" /></td><td><div id="mpassword"></div></td></tr>
-   <tr><td>Confirm Password:</td><td><input type="password" name="cpassword" id="cpassword" /></td><td><div id="mcpassword"></div></td></tr>
+   <tr><td>Name:</td><td><input type="text" name="name" id="name" onkeyup="register()"/></td><td><div id="mname"></div></td></tr>
+   <tr><td>Last Name:</td><td><input type="text" name="lname" id="lname" onkeyup="register()"/></td><td><div id="mlname"></div></td></tr>
+   <tr><td>Email:</td><td><input type="text" name="email" id="email" onkeyup="register()"/></td><td><div id="memail"></div></td></tr>
+   <tr><td>Password:</td><td><input type="password" name="password" id="password" onkeyup="register()"/></td><td><div id="mpassword"></div></td></tr>
+   <tr><td>Confirm Password:</td><td><input type="password" name="cpassword" id="cpassword" onkeyup="pass()"/></td><td><div id="mcpassword"></div></td></tr>
  </table>
  <br/>
-<input type="button" name="submit" value="submit" onclick="register()"/>
+<input type="button" name="submit" value="submit"/>
 </form>
 
 </body>
